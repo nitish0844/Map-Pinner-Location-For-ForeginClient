@@ -11,6 +11,8 @@ import {
 
 import OnBoardScreen from './source/Screens/OnBoardScreen';
 import MapScreen from './source/Screens/MapScreen';
+import MapDetails from './source/Screens/MapDetailPage/MapDetails';
+import ChatScreen from './source/Components/ChatBot/ChatScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -128,6 +130,19 @@ const App = () => {
         <Stack.Screen
           name="MapScreen"
           component={MapScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="MapDetails"
+          component={MapDetails}
+          options={{
+            headerShown: false,
+            ...TransitionPresets.ModalPresentationIOS, // Apply custom animation
+          }}
+        />
+        <Stack.Screen
+          name="ChatScreen"
+          component={ChatScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

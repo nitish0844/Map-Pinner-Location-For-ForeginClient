@@ -7,10 +7,11 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import MapView, {Marker} from 'react-native-maps';
+import MapView, {Marker, Callout} from 'react-native-maps';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import ChatBot from '../Components/ChatBot/ChatBot';
 
 const Drawer = createDrawerNavigator();
 
@@ -21,6 +22,10 @@ const data = [
     description: 'Homeless shelter',
     latitude: 45.532531777651904,
     longititude: -122.83305785767608,
+    address: 'No. 47 James bond Street,Vinchruch cross, Zurich, Switzerland',
+    site: 'https://www.google.com',
+    image:
+      'https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg',
   },
   {
     name: 'Community of Hope',
@@ -28,6 +33,10 @@ const data = [
     description: 'Non-profit organization',
     latitude: 45.5959701574567,
     longititude: -122.75267510500011,
+    address: 'No. 47 James bond Street,Vinchruch cross, Zurich, Switzerland',
+    site: 'https://www.google.com',
+    image:
+      'https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg',
   },
   {
     name: 'Family Promise',
@@ -35,6 +44,10 @@ const data = [
     description: 'Homeless shelter',
     latitude: 45.597232637657484,
     longititude: -122.7533968256706,
+    address: 'No. 47 James bond Street,Vinchruch cross, Zurich, Switzerland',
+    site: 'https://www.google.com',
+    image:
+      'https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg',
   },
   {
     name: 'Community Action Family Shelter',
@@ -42,6 +55,10 @@ const data = [
     description: 'Social services organization',
     latitude: 45.53389011546534,
     longititude: -122.97003263306073,
+    address: 'No. 47 James bond Street,Vinchruch cross, Zurich, Switzerland',
+    site: 'https://www.google.com',
+    image:
+      'https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg',
   },
   {
     name: 'Transitional Youth',
@@ -49,6 +66,10 @@ const data = [
     description: 'Youth organization',
     latitude: 45.54062352219676,
     longititude: -122.85055631685724,
+    site: 'https://www.google.com',
+    address: 'No. 47 James bond Street,Vinchruch cross, Zurich, Switzerland',
+    image:
+      'https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg',
   },
   {
     name: 'Rose Haven Day Shelter and Community Center',
@@ -56,6 +77,10 @@ const data = [
     description: 'Community center',
     latitude: 45.533409126988616,
     longititude: -122.68850797993757,
+    address: 'No. 47 James bond Street,Vinchruch cross, Zurich, Switzerland',
+    site: 'https://www.google.com',
+    image:
+      'https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg',
   },
   {
     name: 'Washington County Resource Center',
@@ -63,15 +88,26 @@ const data = [
     description: 'Social services organization',
     latitude: 45.51320389624091,
     longititude: -122.8471230893801,
+    address: 'No. 47 James bond Street,Vinchruch cross, Zurich, Switzerland',
+    site: 'https://www.google.com',
+    image:
+      'https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg',
   },
 ];
 
 const MapContent = React.memo(() => {
+  const navigation = useNavigation();
+
   const markerCoordinate = {
     latitude: 45.512794,
     longitude: -122.679565,
     latitudeDelta: 0.50001,
     longitudeDelta: 0.50001,
+  };
+
+  const handleMarkerPress = item => {
+    // Navigate to the MapDetails screen with the selected location data
+    navigation.navigate('MapDetails', {selectedLocation: item});
   };
 
   return (
@@ -88,10 +124,15 @@ const MapContent = React.memo(() => {
                 longitude: item.longititude,
               }}
               title={item.name}
-              description={item.description}
-            />
+              description={item.description}>
+              <Callout onPress={() => handleMarkerPress(item)}>
+                <Text>{item.name}</Text>
+                <Text>{item.description}</Text>
+              </Callout>
+            </Marker>
           ))}
         </MapView>
+        <ChatBot />
       </View>
     </View>
   );
@@ -123,6 +164,10 @@ const MapScreen = () => {
   );
 
   function DrawerContent() {
+    const handleLocationClick = item => {
+      navigation.navigate('MapDetails', {selectedLocation: item});
+    };
+
     return (
       <View style={drawerStyles.container}>
         {/* Profile Image and Name */}
@@ -137,7 +182,9 @@ const MapScreen = () => {
         {/* List of Place Names */}
         <View style={drawerStyles.placesList}>
           {data.map((item, index) => (
-            <TouchableOpacity>
+            <TouchableOpacity
+              key={index}
+              onPress={() => handleLocationClick(item)}>
               <Text key={index} style={drawerStyles.placeName}>
                 {item.name}
               </Text>

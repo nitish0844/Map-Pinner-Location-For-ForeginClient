@@ -1,12 +1,12 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 
-const MapDetails = () => {
+const ChatScreen = () => {
   return (
     <View>
-      <Text>MapDetails</Text>
+      <Text>ChatScreen</Text>
     </View>
   );
 };
 
-export default MapDetails;
+export default ChatScreen;
