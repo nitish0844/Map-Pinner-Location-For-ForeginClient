@@ -33,16 +33,18 @@ const styles = StyleSheet.create({
   Address: {
     color: '#000',
     fontSize: 14,
-    fontWeight: '600',
+    // fontWeight: '600',
     marginLeft: 10,
     width: '80%',
+    fontFamily: 'Pangram-Regular',
   },
   Site: {
     color: '#000',
     fontSize: 14,
-    fontWeight: '600',
+    // fontWeight: '600',
     marginLeft: 10,
     width: '100%',
+    fontFamily: 'Pangram-Regular',
   },
 });
 

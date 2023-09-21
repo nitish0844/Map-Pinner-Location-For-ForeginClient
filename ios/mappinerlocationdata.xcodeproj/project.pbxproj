@@ -12,6 +12,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		EAC7EBC4175047959D59CEEB /* Pangram-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA27CD2C0498430980314AAF /* Pangram-Medium.otf */; };
+		2E1E409ADA9A4771AB591C59 /* Pangram-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C87130F75F2A404AA2BA8C10 /* Pangram-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = mappinerlocationdata/main.m; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = mappinerlocationdata/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		AA27CD2C0498430980314AAF /* Pangram-Medium.otf */ = {isa = PBXFileReference; name = "Pangram-Medium.otf"; path = "../source/assets/fonts/Pangram-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C87130F75F2A404AA2BA8C10 /* Pangram-Regular.otf */ = {isa = PBXFileReference; name = "Pangram-Regular.otf"; path = "../source/assets/fonts/Pangram-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 				00E356EF1AD99517003FC87E /* mappinerlocationdataTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				E6C51448338E43A191651645 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -123,6 +128,16 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		E6C51448338E43A191651645 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				AA27CD2C0498430980314AAF /* Pangram-Medium.otf */,
+				C87130F75F2A404AA2BA8C10 /* Pangram-Regular.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -214,6 +229,8 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				EAC7EBC4175047959D59CEEB /* Pangram-Medium.otf in Resources */,
+				2E1E409ADA9A4771AB591C59 /* Pangram-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

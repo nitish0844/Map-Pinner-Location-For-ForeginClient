@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import MapView, {Marker, Callout} from 'react-native-maps';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import ChatBot from '../Components/ChatBot/ChatBot';
@@ -124,10 +123,23 @@ const MapContent = React.memo(() => {
                 longitude: item.longititude,
               }}
               title={item.name}
+              pinColor="#00FF5E"
               description={item.description}>
-              <Callout onPress={() => handleMarkerPress(item)}>
-                <Text>{item.name}</Text>
-                <Text>{item.description}</Text>
+              <Callout
+                onPress={() => handleMarkerPress(item)}
+                style={styles.calloutContainer}>
+                {/* Add this View container */}
+                <Text style={{fontFamily: 'Pangram-Regular', fontSize: 13}}>
+                  {item.name}
+                </Text>
+                <Text
+                  style={{
+                    textAlign: 'center',
+                    fontFamily: 'Pangram-Regular',
+                    fontSize: 13,
+                  }}>
+                  {item.description}
+                </Text>
               </Callout>
             </Marker>
           ))}
@@ -141,25 +153,23 @@ const MapContent = React.memo(() => {
 const MapScreen = () => {
   const navigation = useNavigation();
 
-  const handleExpand = () => {
-    navigation.navigate('Location'); // Navigate to another map page
-  };
-
   return (
     <Drawer.Navigator
       drawerContent={props => <DrawerContent {...props} />}
       screenOptions={{
         headerTitleStyle: {
-          fontSize: 20, // Customize the font size
-          fontWeight: 'bold', // Customize the font weight
+          fontSize: 22, // Customize the font size
+          // fontWeight: 'bold', // Customize the font weight
+          fontFamily: 'Pangram-Medium',
         },
+        headerStyle: {
+          backgroundColor: '#6B46E4', // Set the background color here
+        },
+        headerTintColor: '#fff', // Set the text color
+
         headerTitleAlign: 'center',
       }}>
-      <Drawer.Screen
-        name="Map"
-        component={MapContent}
-        // options={{headerShown: false}}
-      />
+      <Drawer.Screen name="shelter connect" component={MapContent} />
     </Drawer.Navigator>
   );
 
@@ -172,11 +182,11 @@ const MapScreen = () => {
       <View style={drawerStyles.container}>
         {/* Profile Image and Name */}
         <View style={drawerStyles.profile}>
-          <Image
+          {/* <Image
             source={require('./custom.png')}
             style={drawerStyles.profileImage}
-          />
-          <Text style={drawerStyles.profileName}>John Doe</Text>
+          /> */}
+          <Text style={drawerStyles.profileName}>Menu</Text>
         </View>
 
         {/* List of Place Names */}
@@ -199,13 +209,14 @@ const MapScreen = () => {
 const drawerStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#6B46E4',
     padding: 20,
   },
   profile: {
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 20,
+    alignSelf: 'center',
   },
   profileImage: {
     width: 50,
@@ -215,7 +226,9 @@ const drawerStyles = StyleSheet.create({
   },
   profileName: {
     fontSize: 18,
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
+    color: '#fff',
+    fontFamily: 'Pangram-Regular',
   },
   placesList: {
     marginTop: 20,
@@ -223,8 +236,11 @@ const drawerStyles = StyleSheet.create({
   placeName: {
     fontSize: 16,
     marginBottom: 10,
-    fontWeight: '700',
+    // fontWeight: '700',
     marginVertical: 10,
+    color: '#fff',
+    fontFamily: 'Pangram-Regular',
+    textAlign: 'center',
   },
 });
 

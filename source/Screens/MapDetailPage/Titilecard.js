@@ -54,7 +54,8 @@ const styles = StyleSheet.create({
   TitleName: {
     color: '#000',
     fontSize: 19,
-    fontWeight: '700',
+    // fontWeight: '700',
+    fontFamily: 'Pangram-Medium',
   },
   TitleContainer: {
     top: 50,
