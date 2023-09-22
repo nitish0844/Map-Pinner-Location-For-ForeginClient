@@ -4,7 +4,7 @@ import Octicons from 'react-native-vector-icons/Octicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons.js';
 import {useNavigation} from '@react-navigation/native';
 
-const HeaderMapDetail = () => {
+const MedicalHealthHeader = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
@@ -12,8 +12,15 @@ const HeaderMapDetail = () => {
         <TouchableOpacity
           style={styles.iconContainer}
           onPress={() => navigation.goBack()}>
-          <Octicons name="chevron-down" color={'#000'} size={32} />
+          <Octicons name="chevron-left" color={'#000'} size={32} />
         </TouchableOpacity>
+        <View
+          style={{
+            // flex: 1,
+            alignItems: 'center',
+          }}>
+          <Text style={styles.title}>Medical Health and Support</Text>
+        </View>
       </View>
     </View>
   );
@@ -23,25 +30,24 @@ const styles = StyleSheet.create({
   container: {
     // flex: 1,
     // backgroundColor: '#fff',
+    paddingBottom: '5%',
   },
   title: {
     color: '#000',
     fontSize: 18,
-    top: 22,
-    fontWeight: '700',
+    // fontWeight: '700',
+    fontFamily: 'Pangram-Medium',
   },
-  TitleContainer: {
+  headerContainer: {
     flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start', // Center the title horizontally
+    paddingVertical: 10, // Add padding for spacing
   },
   iconContainer: {
-    // marginLeft: 10,
-    left: 10,
-    marginTop: 20,
-  },
-  IconContainer: {
-    right: 20,
-    top: 20,
+    marginLeft: 10,
+    top: '50%',
   },
 });
 
-export default HeaderMapDetail;
+export default MedicalHealthHeader;

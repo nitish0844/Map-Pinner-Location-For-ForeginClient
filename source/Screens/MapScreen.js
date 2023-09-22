@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   StyleSheet,
@@ -8,150 +8,158 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import MapView, {Marker, Callout} from 'react-native-maps';
-import {useNavigation} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import ChatBot from '../Components/ChatBot/ChatBot';
+import VersionCheck from 'react-native-version-check';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import Fontisto from 'react-native-vector-icons/Fontisto';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import {ShelterData} from '../assets/Data/Data';
+import {useNavigation, useRoute} from '@react-navigation/native';
+import MapViewDirections from 'react-native-maps-directions';
 
 const Drawer = createDrawerNavigator();
 
-const data = [
-  {
-    name: 'Family Promise of Beaverton',
-    number: '+19712178949',
-    description: 'Homeless shelter',
-    latitude: 45.532531777651904,
-    longititude: -122.83305785767608,
-    address: 'No. 47 James bond Street,Vinchruch cross, Zurich, Switzerland',
-    site: 'https://www.google.com',
-    image:
-      'https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg',
-  },
-  {
-    name: 'Community of Hope',
-    number: '+19712694093',
-    description: 'Non-profit organization',
-    latitude: 45.5959701574567,
-    longititude: -122.75267510500011,
-    address: 'No. 47 James bond Street,Vinchruch cross, Zurich, Switzerland',
-    site: 'https://www.google.com',
-    image:
-      'https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg',
-  },
-  {
-    name: 'Family Promise',
-    number: '+19712178949',
-    description: 'Homeless shelter',
-    latitude: 45.597232637657484,
-    longititude: -122.7533968256706,
-    address: 'No. 47 James bond Street,Vinchruch cross, Zurich, Switzerland',
-    site: 'https://www.google.com',
-    image:
-      'https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg',
-  },
-  {
-    name: 'Community Action Family Shelter',
-    number: '+15036403263',
-    description: 'Social services organization',
-    latitude: 45.53389011546534,
-    longititude: -122.97003263306073,
-    address: 'No. 47 James bond Street,Vinchruch cross, Zurich, Switzerland',
-    site: 'https://www.google.com',
-    image:
-      'https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg',
-  },
-  {
-    name: 'Transitional Youth',
-    number: '+15033507215',
-    description: 'Youth organization',
-    latitude: 45.54062352219676,
-    longititude: -122.85055631685724,
-    site: 'https://www.google.com',
-    address: 'No. 47 James bond Street,Vinchruch cross, Zurich, Switzerland',
-    image:
-      'https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg',
-  },
-  {
-    name: 'Rose Haven Day Shelter and Community Center',
-    number: '+15032486364',
-    description: 'Community center',
-    latitude: 45.533409126988616,
-    longititude: -122.68850797993757,
-    address: 'No. 47 James bond Street,Vinchruch cross, Zurich, Switzerland',
-    site: 'https://www.google.com',
-    image:
-      'https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg',
-  },
-  {
-    name: 'Washington County Resource Center',
-    number: '+15036490367',
-    description: 'Social services organization',
-    latitude: 45.51320389624091,
-    longititude: -122.8471230893801,
-    address: 'No. 47 James bond Street,Vinchruch cross, Zurich, Switzerland',
-    site: 'https://www.google.com',
-    image:
-      'https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg',
-  },
-];
-
-const MapContent = React.memo(() => {
-  const navigation = useNavigation();
-
-  const markerCoordinate = {
-    latitude: 45.512794,
-    longitude: -122.679565,
-    latitudeDelta: 0.50001,
-    longitudeDelta: 0.50001,
-  };
-
-  const handleMarkerPress = item => {
-    // Navigate to the MapDetails screen with the selected location data
-    navigation.navigate('MapDetails', {selectedLocation: item});
-  };
-
-  return (
-    <View style={styles.container}>
-      <StatusBar backgroundColor="#000" barStyle="light-content" />
-
-      <View style={styles.mapContainer}>
-        <MapView style={styles.map} initialRegion={markerCoordinate}>
-          {data.map((item, index) => (
-            <Marker
-              key={index}
-              coordinate={{
-                latitude: item.latitude,
-                longitude: item.longititude,
-              }}
-              title={item.name}
-              pinColor="#00FF5E"
-              description={item.description}>
-              <Callout
-                onPress={() => handleMarkerPress(item)}
-                style={styles.calloutContainer}>
-                {/* Add this View container */}
-                <Text style={{fontFamily: 'Pangram-Regular', fontSize: 13}}>
-                  {item.name}
-                </Text>
-                <Text
-                  style={{
-                    textAlign: 'center',
-                    fontFamily: 'Pangram-Regular',
-                    fontSize: 13,
-                  }}>
-                  {item.description}
-                </Text>
-              </Callout>
-            </Marker>
-          ))}
-        </MapView>
-        <ChatBot />
-      </View>
-    </View>
-  );
-});
-
 const MapScreen = () => {
   const navigation = useNavigation();
+  const {params} = useRoute();
+  const destinationLocation = params?.destinationLocation;
+  const userLocation = params?.userLocation;
+
+  const [selectedDestination, setSelectedDestination] = useState(null);
+  const [isNavigating, setIsNavigating] = useState(false);
+
+  useEffect(() => {
+    // When the destinationLocation changes, set it as the selected destination
+    if (destinationLocation) {
+      setSelectedDestination(destinationLocation);
+      setIsNavigating(true);
+    }
+  }, [destinationLocation]);
+
+  const MapContent = React.memo(() => {
+    // const MapContent = () => {
+    const navigation = useNavigation();
+
+    console.log(destinationLocation, userLocation);
+
+    const GOOGLE_MAPS_APIKEY = 'AIzaSyBDDOr5YH_yg0l3PBdFT4aC33khrAsW_j8';
+
+    const markerCoordinate = {
+      latitude: 45.512794,
+      longitude: -122.679565,
+      latitudeDelta: 0.50001,
+      longitudeDelta: 0.50001,
+    };
+
+    const handleMarkerPress = item => {
+      // Navigate to the MapDetails screen with the selected location data
+      navigation.navigate('MapDetails', {selectedLocation: item});
+    };
+
+    const renderMarkers = () => {
+      return ShelterData.map((item, index) => (
+        <Marker
+          key={index}
+          coordinate={{
+            latitude: item.latitude,
+            longitude: item.longititude,
+          }}
+          title={item.name}
+          pinColor="#00FF5E"
+          description={item.description}>
+          <Callout
+            onPress={() => handleMarkerPress(item)}
+            style={styles.calloutContainer}>
+            <Text style={{fontFamily: 'Pangram-Regular', fontSize: 13}}>
+              {item.name}
+            </Text>
+            <Text
+              style={{
+                textAlign: 'center',
+                fontFamily: 'Pangram-Regular',
+                fontSize: 13,
+              }}>
+              {item.description}
+            </Text>
+          </Callout>
+        </Marker>
+      ));
+    };
+
+    const renderNavigationRoute = () => {
+      if (userLocation && selectedDestination && isNavigating) {
+        try {
+          const destinationString = `${selectedDestination.latitude},${selectedDestination.longitude}`;
+          return (
+            <MapViewDirections
+              origin={userLocation}
+              destination={destinationString}
+              apikey={GOOGLE_MAPS_APIKEY}
+              strokeWidth={3}
+              strokeColor="#6B46E4"
+              optimizeWaypoints={true}
+            />
+          );
+        } catch (error) {
+          console.error('Error rendering navigation route:', error);
+        }
+      }
+      return null;
+    };
+
+    return (
+      <View style={styles.container}>
+        <StatusBar backgroundColor="#000" barStyle="light-content" />
+
+        <View style={styles.mapContainer}>
+          <MapView style={styles.map} initialRegion={markerCoordinate}>
+            {renderMarkers()}
+            {renderNavigationRoute()}
+          </MapView>
+        </View>
+      </View>
+    );
+
+    // return (
+    //   <View style={styles.container}>
+    //     <StatusBar backgroundColor="#000" barStyle="light-content" />
+
+    //     <View style={styles.mapContainer}>
+    //       <MapView style={styles.map} initialRegion={markerCoordinate}>
+    //         {ShelterData.map((item, index) => (
+    //           <Marker
+    //             key={index}
+    //             coordinate={{
+    //               latitude: item.latitude,
+    //               longitude: item.longititude,
+    //             }}
+    //             title={item.name}
+    //             pinColor="#00FF5E"
+    //             description={item.description}>
+    //             <Callout
+    //               onPress={() => handleMarkerPress(item)}
+    //               style={styles.calloutContainer}>
+    //               {/* Add this View container */}
+    //               <Text style={{fontFamily: 'Pangram-Regular', fontSize: 13}}>
+    //                 {item.name}
+    //               </Text>
+    //               <Text
+    //                 style={{
+    //                   textAlign: 'center',
+    //                   fontFamily: 'Pangram-Regular',
+    //                   fontSize: 13,
+    //                 }}>
+    //                 {item.description}
+    //               </Text>
+    //             </Callout>
+    //           </Marker>
+    //         ))}
+    //       </MapView>
+    //     </View>
+    //   </View>
+    // );
+  }, []);
 
   return (
     <Drawer.Navigator
@@ -169,37 +177,91 @@ const MapScreen = () => {
 
         headerTitleAlign: 'center',
       }}>
-      <Drawer.Screen name="shelter connect" component={MapContent} />
+      <Drawer.Screen name="Shelter Connect" component={MapContent} />
     </Drawer.Navigator>
   );
 
   function DrawerContent() {
-    const handleLocationClick = item => {
-      navigation.navigate('MapDetails', {selectedLocation: item});
+    const [version, getVersion] = useState();
+
+    const fetchVersion = async () => {
+      try {
+        const currentVersion = await VersionCheck.getCurrentVersion();
+        getVersion(currentVersion);
+      } catch (error) {
+        console.error('Error fetching version:', error);
+      }
     };
+
+    fetchVersion();
 
     return (
       <View style={drawerStyles.container}>
         {/* Profile Image and Name */}
         <View style={drawerStyles.profile}>
-          {/* <Image
-            source={require('./custom.png')}
-            style={drawerStyles.profileImage}
-          /> */}
+          <View style={{backgroundColor: '#fff', borderRadius: 50}}>
+            <Image
+              source={require('./Admin.png')}
+              style={drawerStyles.profileImage}
+            />
+          </View>
           <Text style={drawerStyles.profileName}>Menu</Text>
         </View>
 
         {/* List of Place Names */}
         <View style={drawerStyles.placesList}>
-          {data.map((item, index) => (
-            <TouchableOpacity
-              key={index}
-              onPress={() => handleLocationClick(item)}>
-              <Text key={index} style={drawerStyles.placeName}>
-                {item.name}
-              </Text>
-            </TouchableOpacity>
-          ))}
+          <TouchableOpacity
+            onPress={() => navigation.navigate('ResourceLocator')}>
+            <View style={drawerStyles.drawerItem}>
+              <Ionicons name="call" size={20} color={'#fff'} />
+              <Text style={drawerStyles.placeName}>Resource Locator</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => navigation.navigate('CrisisLines')}>
+            <View style={drawerStyles.drawerItem}>
+              <Ionicons name="map" size={20} color={'#fff'} />
+              <Text style={drawerStyles.placeName}>Crisis Lines</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => navigation.navigate('ShelterProgram')}>
+            <View style={drawerStyles.drawerItem}>
+              <Ionicons name="ios-home" size={20} color={'#fff'} />
+              <Text style={drawerStyles.placeName}>Shelter Programs</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => navigation.navigate('LegalMain')}>
+            <View style={drawerStyles.drawerItem}>
+              <FontAwesome name="legal" size={20} color={'#fff'} />
+              <Text style={drawerStyles.placeName}>Legal Aid Information</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => navigation.navigate('MentalHealthSupport')}>
+            <View style={drawerStyles.drawerItem}>
+              <FontAwesome5
+                name="hand-holding-medical"
+                size={20}
+                color={'#fff'}
+              />
+              <Text style={drawerStyles.placeName}>Mental Health Support</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => navigation.navigate('HelperBot')}>
+            <View style={drawerStyles.drawerItem}>
+              <Ionicons name="chatbox" size={20} color={'#fff'} />
+              <Text style={drawerStyles.placeName}>Helper Bot</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+
+        <View style={drawerStyles.appVersionContainer}>
+          <Text style={drawerStyles.appVersionText}>V: {version}</Text>
         </View>
       </View>
     );
@@ -214,21 +276,23 @@ const drawerStyles = StyleSheet.create({
   },
   profile: {
     flexDirection: 'row',
-    alignItems: 'center',
     marginBottom: 20,
-    alignSelf: 'center',
+    alignSelf: 'flex-start',
+    alignItems: 'center', // Center vertically within the row
   },
   profileImage: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    marginRight: 10,
+    width: 40,
+    height: 40,
   },
   profileName: {
     fontSize: 18,
-    // fontWeight: 'bold',
     color: '#fff',
     fontFamily: 'Pangram-Regular',
+    marginLeft: 10, // Add some spacing between the image and text
+
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
   },
   placesList: {
     marginTop: 20,
@@ -236,11 +300,25 @@ const drawerStyles = StyleSheet.create({
   placeName: {
     fontSize: 16,
     marginBottom: 10,
-    // fontWeight: '700',
     marginVertical: 10,
     color: '#fff',
     fontFamily: 'Pangram-Regular',
-    textAlign: 'center',
+    left: '20%',
+  },
+  drawerItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  appVersionContainer: {
+    flex: 1,
+    alignItems: 'flex-end', // Align to the right
+    justifyContent: 'flex-end', // Align to the bottom
+    paddingBottom: 20, // Add padding to separate from the bottom
+  },
+  appVersionText: {
+    fontSize: 13,
+    color: '#fff',
+    fontFamily: 'Pangram-Medium',
   },
 });
 
