@@ -340,7 +340,6 @@ const Chat = ({navigation}) => {
                   resizeMode="contain"
                 />
               </TouchableOpacity>
-
               <Text
                 style={{
                   marginHorizontal: 10,
