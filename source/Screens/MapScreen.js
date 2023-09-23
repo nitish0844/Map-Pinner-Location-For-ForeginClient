@@ -6,6 +6,7 @@ import {
   StatusBar,
   Text,
   TouchableOpacity,
+  SafeAreaView,
 } from 'react-native';
 import MapView, {Marker, Callout} from 'react-native-maps';
 import {createDrawerNavigator} from '@react-navigation/drawer';
@@ -15,7 +16,7 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {ShelterData} from '../assets/Data/Data';
-import {useNavigation, useRoute} from '@react-navigation/native';
+import {DrawerActions, useNavigation, useRoute} from '@react-navigation/native';
 import MapViewDirections from 'react-native-maps-directions';
 
 const Drawer = createDrawerNavigator();
@@ -41,7 +42,7 @@ const MapScreen = () => {
     // const MapContent = () => {
     const navigation = useNavigation();
 
-    console.log(destinationLocation, userLocation);
+    // console.log(destinationLocation, userLocation);
 
     const GOOGLE_MAPS_APIKEY = 'AIzaSyBDDOr5YH_yg0l3PBdFT4aC33khrAsW_j8';
 
@@ -207,11 +208,14 @@ const MapScreen = () => {
           </View>
           <Text style={drawerStyles.profileName}>Menu</Text>
         </View>
-
         {/* List of Place Names */}
         <View style={drawerStyles.placesList}>
           <TouchableOpacity
-            onPress={() => navigation.navigate('ResourceLocator')}>
+            onPress={() => {
+              navigation.navigate('MapScreen');
+
+              navigation.dispatch(DrawerActions.closeDrawer());
+            }}>
             <View style={drawerStyles.drawerItem}>
               <Ionicons name="call" size={20} color={'#fff'} />
               <Text style={drawerStyles.placeName}>Resource Locator</Text>
@@ -252,7 +256,7 @@ const MapScreen = () => {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => navigation.navigate('HelperBot')}>
+          <TouchableOpacity onPress={() => navigation.navigate('ChatScreen')}>
             <View style={drawerStyles.drawerItem}>
               <Ionicons name="chatbox" size={20} color={'#fff'} />
               <Text style={drawerStyles.placeName}>Helper Bot</Text>
@@ -273,6 +277,7 @@ const drawerStyles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#6B46E4',
     padding: 20,
+    paddingTop: 70,
   },
   profile: {
     flexDirection: 'row',
@@ -308,6 +313,7 @@ const drawerStyles = StyleSheet.create({
   drawerItem: {
     flexDirection: 'row',
     alignItems: 'center',
+    marginVertical: 10,
   },
   appVersionContainer: {
     flex: 1,

@@ -1,3 +1,5 @@
+import endent from "endent";
+
 export const ShelterData = [
   {
     name: 'Family Promise of Beaverton',
@@ -206,3 +208,161 @@ export const legal = [
     additionalInfo: 'Immigrant/Refugee assistance, including crime victims.',
   },
 ];
+
+export const chatData = endent`
+
+**Shelter Data:**
+
+1. **Family Promise of Beaverton**
+   - Description: Homeless shelter.
+   - Phone Number: +19712178949.
+   - Location: 45.532531777651904 latitude, -122.83305785767608 longitude.
+   - Address: No. 47 James Bond Street, Vinchruch Cross, Zurich, Switzerland.
+   - Website: [Google Map](https://www.google.com).
+   - ![Image](https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg)
+
+2. **Community of Hope**
+   - Description: Non-profit organization.
+   - Phone Number: +19712694093.
+   - Location: 45.5959701574567 latitude, -122.75267510500011 longitude.
+   - Address: No. 47 James Bond Street, Vinchruch Cross, Zurich, Switzerland.
+   - Website: [Google Map](https://www.google.com).
+   - ![Image](https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg)
+
+3. **Family Promise**
+   - Description: Homeless shelter.
+   - Phone Number: +19712178949.
+   - Location: 45.597232637657484 latitude, -122.7533968256706 longitude.
+   - Address: No. 47 James Bond Street, Vinchruch Cross, Zurich, Switzerland.
+   - Website: [Google Map](https://www.google.com).
+   - ![Image](https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg)
+
+4. **Community Action Family Shelter**
+   - Description: Social services organization.
+   - Phone Number: +15036403263.
+   - Location: 45.53389011546534 latitude, -122.97003263306073 longitude.
+   - Address: No. 47 James Bond Street, Vinchruch Cross, Zurich, Switzerland.
+   - Website: [Google Map](https://www.google.com).
+   - ![Image](https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg)
+
+5. **Transitional Youth**
+   - Description: Youth organization.
+   - Phone Number: +15033507215.
+   - Location: 45.54062352219676 latitude, -122.85055631685724 longitude.
+   - Address: No. 47 James Bond Street, Vinchruch Cross, Zurich, Switzerland.
+   - Website: [Google Map](https://www.google.com).
+   - ![Image](https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg)
+
+6. **Rose Haven Day Shelter and Community Center**
+   - Description: Community center.
+   - Phone Number: +15032486364.
+   - Location: 45.533409126988616 latitude, -122.68850797993757 longitude.
+   - Address: No. 47 James Bond Street, Vinchruch Cross, Zurich, Switzerland.
+   - Website: [Google Map](https://www.google.com).
+   - ![Image](https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg)
+
+7. **Washington County Resource Center**
+   - Description: Social services organization.
+   - Phone Number: +15036490367.
+   - Location: 45.51320389624091 latitude, -122.8471230893801 longitude.
+   - Address: No. 47 James Bond Street, Vinchruch Cross, Zurich, Switzerland.
+   - Website: [Google Map](https://www.google.com).
+   - ![Image](https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg)
+
+**Mental Health Services:**
+
+1. **Suicide Prevention Hotline**
+   - Phone: 1-800-273-8255
+   - Text Line: Text '273TALK' to 839863
+   - Español Phone: 1-888-628-9454 (Español)
+
+2. **Avel Gordly Center for Healing (OHSU)**
+   - Phone: 503-418-5311
+   - Additional Info: Counseling, medication management. Only African-American specific services accepts OHP.
+
+3. **Cascadia Behavioral Health (Intake Line)**
+   - Phone: 503-674-7777
+
+4. **David Romprey Oregon Warmline**
+   - Phone: 1-800-698-2392
+   - Additional Info: Peer support, 9am-11pm.
+
+5. **Folk Time Social Program - NE PDX**
+   - Website: folktime.org
+   - Address: 4837 NE Couch
+   - Additional Info: Drop-in center.
+
+6. **Lewis & Clark Counseling Center**
+   - Phone: 503-768-6320
+   - Additional Info: Student-provided sliding-scale counseling, including couples & substance abuse.
+
+7. **Lifeworks NW**
+   - Phone: 503-645-9010
+   - Additional Info: Mental health/A&D services for youth & adults.
+
+8. **North Star Clubhouse**
+   - Phone: 971-271-7273
+   - Address: 5600 NE Glisan
+   - Additional Info: Support center M-F 9am-5pm.
+
+9. **Oregon Military Assistance Helpline**
+   - Phone: 800-511-6944
+   - Additional Info: Free, anonymous help for military/veterans and families. (24hr).
+
+10. **Pacific Psychology Clinic (Portland)**
+    - Phone: 503-352-2400
+
+11. **Pacific Psychology Clinic (Hillsboro)**
+    - Phone: 503-352-7333
+
+12. **Quest Center for Integrative Health**
+    - Phone: 503-238-5203
+    - Additional Info: Holistic mental health, A&D services. OHP, Medicare.
+
+13. **Unity Center**
+    - Phone: 503-944-8000
+    - Address: 1225 NE 2nd Ave
+    - Additional Info: Crisis inpatient/stabilization. Triage area for walk-ins.
+
+14. **Urgent Walk-In Clinic (Cascadia)**
+    - Phone: 503-963-2575
+    - Address: 4212 SE Division
+    - Additional Info: 7am-10:30pm daily. Crisis counseling, prescribing, referrals. Serves all.
+
+15. **Western Psychological & Counseling**
+    - Phone: 503-253-4600
+    - Additional Info: Counseling, med. management, groups, A&D. Accepts OHP/Medicare.
+
+16. **William Temple House**
+    - Phone: 503-
+
+226-3021 x220
+    - Additional Info: Individual, couples, family counseling. Sliding scale. Get application at williamtemple.org.
+
+17. **Cascade AIDS Project (CAP)**
+    - Phone: 503-223-5907
+    - Additional Info: HIV & STD testing.
+
+**Legal Services:**
+
+1. **Immigration Legal Services**
+   - Phone: 503-542-2855
+   - Address: 2740 SE Powell, suite 2
+   - Additional Info: Servicios en Español.
+
+2. **Child Support Helpline**
+   - Phone: 800-850-0228
+   - Website: [oregonchildsupport.gov](https://www.oregonchildsupport.gov).
+
+3. **Immigration Counseling Services**
+   - Phone: 503-221-1689
+   - Additional Info: Low-cost immigration legal assistance.
+
+4. **Legal Aid Services of Oregon**
+   - Phone: 503-224-4086
+   - Additional Info: Legal services for low-income.
+
+5. **Lutheran Community Services NW**
+   - Phone: 503-231-7480
+   - Additional Info: Immigrant/Refugee assistance, including crime victims.
+`
