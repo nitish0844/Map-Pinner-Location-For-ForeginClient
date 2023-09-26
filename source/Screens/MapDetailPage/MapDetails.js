@@ -1,22 +1,30 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import HeaderMapDetail from './HeaderMapDetail';
 import Titilecard from './Titilecard';
-import MapImage from './MapImage';
 import LocationDetails from './LocationDetails';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const MapDetails = ({route}) => {
-  // Access the selectedLocation data from route.params
   const {selectedLocation} = route.params;
 
   return (
     <View style={{backgroundColor: '#fff', flex: 1}}>
-      <HeaderMapDetail />
-      <Titilecard locationData={selectedLocation} />
-      <MapImage locationData={selectedLocation} />
-      <LocationDetails locationData={selectedLocation} />
+      <ScrollView
+        contentContainerStyle={styles.flatListContentContainer}
+        showsVerticalScrollIndicator={false}>
+        <HeaderMapDetail />
+        <Titilecard locationData={selectedLocation} />
+        <LocationDetails locationData={selectedLocation} />
+      </ScrollView>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  flatListContentContainer: {
+    paddingBottom: 150, // Add extra bottom height here (adjust as needed)
+  },
+});
 
 export default MapDetails;

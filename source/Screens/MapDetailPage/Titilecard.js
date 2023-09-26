@@ -7,77 +7,14 @@ import {
   Linking,
   Share,
 } from 'react-native';
-import {check, PERMISSIONS, RESULTS, request} from 'react-native-permissions';
-import Geolocation from 'react-native-geolocation-service';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 
 const Titilecard = ({locationData}) => {
   const navigation = useNavigation();
-  const [region, setRegion] = useState({
-    latitude: 0,
-    longitude: 0,
-    latitudeDelta: 0.0122,
-    longitudeDelta: 0.0421,
-  });
-
-  const requestLocationPermission = async () => {
-    try {
-      const permissionResult = await check(
-        // PERMISSIONS.ANDROID.ACCESS_COARSE_LOCATION,
-        PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION,
-      );
-
-      if (permissionResult === RESULTS.GRANTED) {
-        // Permission granted, get current location
-        Geolocation.getCurrentPosition(
-          position => {
-            const {latitude, longitude} = position.coords;
-            setRegion(prevRegion => ({
-              ...prevRegion,
-              latitude,
-              longitude,
-            }));
-
-            // console.log('Location updated:', latitude, longitude);
-          },
-          error => console.error(error),
-          {enableHighAccuracy: true, timeout: 30000, maximumAge: 10000},
-        );
-      } else {
-        const requestResult = await request(
-          PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION,
-        );
-
-        if (requestResult === RESULTS.GRANTED) {
-          // Permission granted, get current location
-          Geolocation.getCurrentPosition(
-            position => {
-              const {latitude, longitude} = position.coords;
-              setRegion(prevRegion => ({
-                ...prevRegion,
-                latitude,
-                longitude,
-              }));
-
-              // console.log('Location updated:', latitude, longitude);
-            },
-            error => console.error(error),
-            {enableHighAccuracy: true, timeout: 30000, maximumAge: 10000},
-          );
-        } else {
-          console.log('Location permission denied');
-        }
-      }
-    } catch (err) {
-      console.warn(err);
-    }
-  };
 
   const handleCallButtonPress = () => {
-    // Check if the locationData has a valid number
     if (locationData.number) {
-      // Use Linking to open the phone dialer with the provided number
       Linking.openURL(`tel:${locationData.number}`);
     }
   };
@@ -89,19 +26,11 @@ const Titilecard = ({locationData}) => {
   };
 
   const handleNavigationButtonPress = () => {
-    requestLocationPermission()
-      .then(() => {
-        const {latitude, longititude} = locationData;
-        // Navigate to the screen where you want to display the navigation route
-        navigation.navigate('MapScreen', {
-          userLocation: region, // User's location
-          destinationLocation: {latitude, longititude}, // Destination location
-        });
-      })
-      .catch(error => {
-        console.error('Error requesting location permission:', error);
-      });
-    // Implement your navigation logic here, using the region state or any other data you need.
+    const {latitude, longitude, name} = locationData;
+    navigation.navigate('NavigationScreen', {
+      destinationLocation: {latitude, longitude}, // Destination location
+      DestinationName: name,
+    });
   };
 
   return (
@@ -145,11 +74,10 @@ const styles = StyleSheet.create({
   TitleName: {
     color: '#000',
     fontSize: 19,
-    // fontWeight: '700',
     fontFamily: 'Pangram-Medium',
   },
   TitleContainer: {
-    top: 50,
+    top: 30,
     left: '5%',
   },
   ButtonContainer: {
@@ -180,8 +108,8 @@ const styles = StyleSheet.create({
   ButtonText: {
     color: '#fff',
     fontSize: 17,
-    fontWeight: 'bold',
     marginLeft: 5, // Add spacing between text and button icon
+    fontFamily: 'Pangram-Medium',
   },
 });
 

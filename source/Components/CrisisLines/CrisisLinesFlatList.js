@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {ShelterData} from '../../assets/Data/Data';
 
-const ShelterProgramFlatList = () => {
+const CrisisLinesFlatList = () => {
   const handlePhoneNumberPress = phoneNumber => {
     Linking.openURL(`tel:${phoneNumber}`);
   };
@@ -40,12 +40,17 @@ const ShelterProgramFlatList = () => {
           <TouchableOpacity onPress={() => handlePhoneNumberPress(item.number)}>
             <Text style={styles.phoneText}>Phone: {item.number}</Text>
           </TouchableOpacity>
-          <Text style={styles.cardText}>{item.address}</Text>
-          <TouchableOpacity onPress={() => handleWebsitePress(item.website)}>
-            <Text style={[styles.cardText, {color: 'blue'}]}>
-              {item.website}
-            </Text>
-          </TouchableOpacity>
+          {item.address && <Text style={styles.cardText}>{item.address}</Text>}
+          {item.website && (
+            <TouchableOpacity onPress={() => handleWebsitePress(item.website)}>
+              <Text style={[styles.cardText, {color: 'blue'}]}>
+                {item.website}
+              </Text>
+            </TouchableOpacity>
+          )}
+          {item.additionalInfo && (
+            <Text style={styles.cardText}>{item.additionalInfo}</Text>
+          )}
         </View>
       )}
       contentContainerStyle={styles.flatListContentContainer}
@@ -63,6 +68,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     borderColor: '#6B46E4',
     borderWidth: 2,
+    // top: '20%',
   },
   cardText: {
     color: '#000',
@@ -81,4 +87,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ShelterProgramFlatList;
+export default CrisisLinesFlatList;

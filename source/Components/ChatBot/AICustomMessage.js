@@ -108,7 +108,7 @@ const AICustomMessage = ({message}) => {
           }}>
           <View>
             <FastImage
-              source={require('../../../phyLogo.png')}
+              source={require('../../Screens/Admin.png')}
               style={{
                 resizeMode: 'contain',
                 width: 45,

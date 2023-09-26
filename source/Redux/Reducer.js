@@ -5,7 +5,6 @@ import {MMKV} from 'react-native-mmkv';
 import {UserReducer} from './Reducers/UserReducer';
 import {ThemeReducer} from './Reducers/ThemeReducer';
 import {ToastReducer} from './Reducers/ToastReducer';
-import {NotesReducer} from './Reducers/NotesReducer';
 import {ChatReducer} from './Reducers/ChatReducer';
 
 const storage = new MMKV();

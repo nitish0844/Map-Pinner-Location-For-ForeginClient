@@ -30,13 +30,7 @@ export const handleChatBotPrompt = async prompt => {
         },
       },
     );
-    console.log(
-      // response?.data?.choices,
-      // response?.data?.choices?.length,
-      response?.data?.choices?.[0]?.message?.content,
-    );
     return response?.data?.choices?.[0]?.message?.content;
   } catch (error) {
-    console.log(error);
   }
 };

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {
   View,
   StyleSheet,
@@ -6,7 +6,7 @@ import {
   StatusBar,
   Text,
   TouchableOpacity,
-  SafeAreaView,
+  ActivityIndicator,
 } from 'react-native';
 import MapView, {Marker, Callout} from 'react-native-maps';
 import {createDrawerNavigator} from '@react-navigation/drawer';
@@ -16,165 +16,25 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {ShelterData} from '../assets/Data/Data';
-import {DrawerActions, useNavigation, useRoute} from '@react-navigation/native';
-import MapViewDirections from 'react-native-maps-directions';
+import {useNavigation, useRoute} from '@react-navigation/native';
 
 const Drawer = createDrawerNavigator();
 
 const MapScreen = () => {
   const navigation = useNavigation();
-  const {params} = useRoute();
-  const destinationLocation = params?.destinationLocation;
-  const userLocation = params?.userLocation;
-
-  const [selectedDestination, setSelectedDestination] = useState(null);
-  const [isNavigating, setIsNavigating] = useState(false);
-
-  useEffect(() => {
-    // When the destinationLocation changes, set it as the selected destination
-    if (destinationLocation) {
-      setSelectedDestination(destinationLocation);
-      setIsNavigating(true);
-    }
-  }, [destinationLocation]);
-
-  const MapContent = React.memo(() => {
-    // const MapContent = () => {
-    const navigation = useNavigation();
-
-    // console.log(destinationLocation, userLocation);
-
-    const GOOGLE_MAPS_APIKEY = 'AIzaSyBDDOr5YH_yg0l3PBdFT4aC33khrAsW_j8';
-
-    const markerCoordinate = {
-      latitude: 45.512794,
-      longitude: -122.679565,
-      latitudeDelta: 0.50001,
-      longitudeDelta: 0.50001,
-    };
-
-    const handleMarkerPress = item => {
-      // Navigate to the MapDetails screen with the selected location data
-      navigation.navigate('MapDetails', {selectedLocation: item});
-    };
-
-    const renderMarkers = () => {
-      return ShelterData.map((item, index) => (
-        <Marker
-          key={index}
-          coordinate={{
-            latitude: item.latitude,
-            longitude: item.longititude,
-          }}
-          title={item.name}
-          pinColor="#00FF5E"
-          description={item.description}>
-          <Callout
-            onPress={() => handleMarkerPress(item)}
-            style={styles.calloutContainer}>
-            <Text style={{fontFamily: 'Pangram-Regular', fontSize: 13}}>
-              {item.name}
-            </Text>
-            <Text
-              style={{
-                textAlign: 'center',
-                fontFamily: 'Pangram-Regular',
-                fontSize: 13,
-              }}>
-              {item.description}
-            </Text>
-          </Callout>
-        </Marker>
-      ));
-    };
-
-    const renderNavigationRoute = () => {
-      if (userLocation && selectedDestination && isNavigating) {
-        try {
-          const destinationString = `${selectedDestination.latitude},${selectedDestination.longitude}`;
-          return (
-            <MapViewDirections
-              origin={userLocation}
-              destination={destinationString}
-              apikey={GOOGLE_MAPS_APIKEY}
-              strokeWidth={3}
-              strokeColor="#6B46E4"
-              optimizeWaypoints={true}
-            />
-          );
-        } catch (error) {
-          console.error('Error rendering navigation route:', error);
-        }
-      }
-      return null;
-    };
-
-    return (
-      <View style={styles.container}>
-        <StatusBar backgroundColor="#000" barStyle="light-content" />
-
-        <View style={styles.mapContainer}>
-          <MapView style={styles.map} initialRegion={markerCoordinate}>
-            {renderMarkers()}
-            {renderNavigationRoute()}
-          </MapView>
-        </View>
-      </View>
-    );
-
-    // return (
-    //   <View style={styles.container}>
-    //     <StatusBar backgroundColor="#000" barStyle="light-content" />
-
-    //     <View style={styles.mapContainer}>
-    //       <MapView style={styles.map} initialRegion={markerCoordinate}>
-    //         {ShelterData.map((item, index) => (
-    //           <Marker
-    //             key={index}
-    //             coordinate={{
-    //               latitude: item.latitude,
-    //               longitude: item.longititude,
-    //             }}
-    //             title={item.name}
-    //             pinColor="#00FF5E"
-    //             description={item.description}>
-    //             <Callout
-    //               onPress={() => handleMarkerPress(item)}
-    //               style={styles.calloutContainer}>
-    //               {/* Add this View container */}
-    //               <Text style={{fontFamily: 'Pangram-Regular', fontSize: 13}}>
-    //                 {item.name}
-    //               </Text>
-    //               <Text
-    //                 style={{
-    //                   textAlign: 'center',
-    //                   fontFamily: 'Pangram-Regular',
-    //                   fontSize: 13,
-    //                 }}>
-    //                 {item.description}
-    //               </Text>
-    //             </Callout>
-    //           </Marker>
-    //         ))}
-    //       </MapView>
-    //     </View>
-    //   </View>
-    // );
-  }, []);
 
   return (
     <Drawer.Navigator
       drawerContent={props => <DrawerContent {...props} />}
       screenOptions={{
         headerTitleStyle: {
-          fontSize: 22, // Customize the font size
-          // fontWeight: 'bold', // Customize the font weight
+          fontSize: 22,
           fontFamily: 'Pangram-Medium',
         },
         headerStyle: {
-          backgroundColor: '#6B46E4', // Set the background color here
+          backgroundColor: '#4169E1',
         },
-        headerTintColor: '#fff', // Set the text color
+        headerTintColor: '#fff',
 
         headerTitleAlign: 'center',
       }}>
@@ -208,21 +68,18 @@ const MapScreen = () => {
           </View>
           <Text style={drawerStyles.profileName}>Menu</Text>
         </View>
+
         {/* List of Place Names */}
         <View style={drawerStyles.placesList}>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('MapScreen');
-
-              navigation.dispatch(DrawerActions.closeDrawer());
-            }}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
             <View style={drawerStyles.drawerItem}>
               <Ionicons name="call" size={20} color={'#fff'} />
               <Text style={drawerStyles.placeName}>Resource Locator</Text>
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => navigation.navigate('CrisisLines')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('CrisisLineMain')}>
             <View style={drawerStyles.drawerItem}>
               <Ionicons name="map" size={20} color={'#fff'} />
               <Text style={drawerStyles.placeName}>Crisis Lines</Text>
@@ -272,12 +129,66 @@ const MapScreen = () => {
   }
 };
 
+const MapContent = React.memo(() => {
+  const navigation = useNavigation();
+
+  const markerCoordinate = {
+    latitude: 45.512794,
+    longitude: -122.679565,
+    latitudeDelta: 0.50001,
+    longitudeDelta: 0.50001,
+  };
+
+  const handleMarkerPress = item => {
+    navigation.navigate('MapDetails', {selectedLocation: item});
+  };
+
+  return (
+    <View style={styles.container}>
+      <StatusBar backgroundColor="#000" barStyle="light-content" />
+
+      <View style={styles.mapContainer}>
+        <MapView style={styles.map} initialRegion={markerCoordinate}>
+          {ShelterData.map((item, index) => (
+            <Marker
+              key={index}
+              coordinate={{
+                latitude: item.latitude,
+                longitude: item.longitude,
+              }}
+              title={item.name}
+              pinColor="#4169E1"
+              description={item.description}>
+              <Callout
+                onPress={() => handleMarkerPress(item)}
+                style={styles.calloutContainer}>
+                {/* Add this View container */}
+                <Text style={{fontFamily: 'Pangram-Regular', fontSize: 13}}>
+                  {item.name}
+                </Text>
+                <Text
+                  style={{
+                    textAlign: 'center',
+                    fontFamily: 'Pangram-Regular',
+                    fontSize: 13,
+                  }}>
+                  {item.description}
+                </Text>
+              </Callout>
+            </Marker>
+          ))}
+        </MapView>
+      </View>
+    </View>
+  );
+}, []);
+
 const drawerStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#6B46E4',
+    backgroundColor: '#4169E1',
     padding: 20,
-    paddingTop: 70,
+    paddingTop: 50,
   },
   profile: {
     flexDirection: 'row',
@@ -313,7 +224,6 @@ const drawerStyles = StyleSheet.create({
   drawerItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 10,
   },
   appVersionContainer: {
     flex: 1,

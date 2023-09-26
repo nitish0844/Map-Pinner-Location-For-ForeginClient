@@ -22,7 +22,6 @@ import {handleChatBotPrompt} from '../../API/ChatGPTAPI';
 import AICustomMessage from './AICustomMessage';
 import {normalize} from '../../Helpers/ResponsiveFonts';
 import FastImage from 'react-native-fast-image';
-// import {useTheme} from '@react-navigation/native';
 import {addMessagesAction} from '../../Redux/Actions/ChatAction';
 
 var relativeTime = require('dayjs/plugin/relativeTime');
@@ -35,10 +34,7 @@ const messageCreatedTime = created_at => {
 };
 
 const Chat = ({navigation}) => {
-  const data = useSelector(state => state?.UserReducer);
   const chatData = useSelector(state => state?.ChatReducer);
-
-  // const paperTheme = useTheme();
 
   const [messages, setMessages] = useState(
     Object.values(chatData?.chatMessages),
@@ -150,7 +146,7 @@ const Chat = ({navigation}) => {
           }}>
           <View
             style={{
-              backgroundColor: '#6B46E4',
+              backgroundColor: '#4169E1',
               borderRadius: 20,
               borderBottomRightRadius: 0,
               borderBottomLeftRadius: 20,
@@ -163,9 +159,7 @@ const Chat = ({navigation}) => {
               style={{
                 fontFamily: 'Pangram-Regular',
                 lineHeight: 30,
-                fontSize: normalize(3.8),
-                // fontSize: normalize(4.2),
-                // color: paperTheme.colors.text,
+                fontSize: normalize(4),
               }}>
               {props?.currentMessage?.text}
             </Text>
@@ -173,10 +167,9 @@ const Chat = ({navigation}) => {
               style={{
                 textAlign: 'right',
                 marginTop: 5,
-
                 fontFamily: 'Pangram-Regular',
                 lineHeight: 30,
-                fontSize: normalize(3.8),
+                fontSize: normalize(3),
               }}>
               {messageCreatedTime(props?.currentMessage?.createdAt)}{' '}
             </Text>
@@ -193,7 +186,7 @@ const Chat = ({navigation}) => {
   const renderLoading = () => {
     return (
       <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color={'#6B46E4'} />
+        <ActivityIndicator size="large" color={'#4169E1'} />
       </View>
     );
   };
@@ -247,7 +240,7 @@ const Chat = ({navigation}) => {
                     paddingHorizontal: 10,
                     paddingTop: 10,
                     borderRadius: 10,
-                    borderColor: '#6B46E4',
+                    borderColor: '#4169E1',
                     fontFamily: 'Pangram-Medium',
                     alignItems: 'center',
                     fontSize: 18,
@@ -312,7 +305,6 @@ const Chat = ({navigation}) => {
   return (
     <View style={{flex: 1, backgroundColor: '#161621'}}>
       <StatusBar hidden={true} />
-
       <>
         <SafeAreaView>
           <View
@@ -397,7 +389,7 @@ const Chat = ({navigation}) => {
                     }}>
                     <View>
                       <FastImage
-                        source={require('../../../phyLogo.png')}
+                        source={require('../../Screens/Admin.png')}
                         style={{
                           resizeMode: 'contain',
                           width: 45,
@@ -409,7 +401,7 @@ const Chat = ({navigation}) => {
                   </View>
                   <ActivityIndicator
                     size={'small'}
-                    color={'#6B46E4'}
+                    color={'#4169E1'}
                     style={{marginLeft: 10}}
                   />
                 </View>
@@ -438,7 +430,7 @@ const Chat = ({navigation}) => {
               </Text>
 
               <FastImage
-                source={require('../../../phyLogo.png')}
+                source={require('../../Screens/Admin.png')}
                 style={{
                   width: 80,
                   height: 80,
