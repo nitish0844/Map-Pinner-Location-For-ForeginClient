@@ -32,6 +32,10 @@ const LocationDetails = ({locationData}) => {
           {locationData.number}
         </Text>
       </View>
+      <View style={{flexDirection: 'row', marginTop: 25}}>
+        <Ionicons name="duplicate-outline" size={21} color={'#288EFF'} />
+        <Text style={styles.Address}>Categories : {locationData.Category}</Text>
+      </View>
       <View style={{marginTop: 25}}>
         <View style={{flexDirection: 'row'}}>
           <FontAwesome5
