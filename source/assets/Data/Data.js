@@ -514,158 +514,74 @@ export const legal = [
 
 export const chatData = endent`
 
-**Shelter Data:**
+Below are data for Shelter Data,
 
-1. **Family Promise of Beaverton**
-   - Description: Homeless shelter.
-   - Phone Number: +19712178949.
-   - Location: 45.532531777651904 latitude, -122.83305785767608 longitude.
-   - Address: No. 47 James Bond Street, Vinchruch Cross, Zurich, Switzerland.
-   - Website: [Google Map](https://www.google.com).
-   - ![Image](https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg)
+Family Promise of Beaverton: Family Promise of Beaverton is a homeless shelter located at 14986 NW Cornell Rd, Portland, OR 97229. They provide shelter and support for families, men, women, and youth experiencing homelessness. You can find more information on their website at https://www.familypromisegwc.org/. They are in need of various items including Bibles (NLT), new undergarments, jeans, twin blankets, travel-size toiletries, disposable razors, deodorant, bottled water, coffee, fruit, vegetables, socks, coats, hats, gloves, backpacks, women’s hygiene products, hair products for all ethnicities, and toiletries for men and women.
 
-2. **Community of Hope**
-   - Description: Non-profit organization.
-   - Phone Number: +19712694093.
-   - Location: 45.5959701574567 latitude, -122.75267510500011 longitude.
-   - Address: No. 47 James Bond Street, Vinchruch Cross, Zurich, Switzerland.
-   - Website: [Google Map](https://www.google.com).
-   - ![Image](https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg)
+Community of Hope: Community of Hope is a non-profit organization located at 8911 N Leonard St, Portland, OR 97203. They offer shelter and assistance to families, men, women, and youth in need. More details about their services can be found on their website http://communityofhopepdx.org/. They are also in need of items including Bibles (NLT), new undergarments, jeans, twin blankets, travel-size toiletries, disposable razors, deodorant, bottled water, coffee, fruit, vegetables, socks, coats, hats, gloves, backpacks, women’s hygiene products, hair products for all ethnicities, and toiletries for men and women.
 
-3. **Family Promise**
-   - Description: Homeless shelter.
-   - Phone Number: +19712178949.
-   - Location: 45.597232637657484 latitude, -122.7533968256706 longitude.
-   - Address: No. 47 James Bond Street, Vinchruch Cross, Zurich, Switzerland.
-   - Website: [Google Map](https://www.google.com).
-   - ![Image](https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg)
+Family Promise: Family Promise is another homeless shelter located at 5625 SW Erickson Ave, Beaverton, OR 97007. They serve families, men, women, and youth experiencing homelessness. For additional information, visit their website at https://www.familypromisegwc.org/. They have similar donation needs, including Bibles (NLT), new undergarments, jeans, twin blankets, travel-size toiletries, disposable razors, deodorant, bottled water, coffee, fruit, vegetables, socks, coats, hats, gloves, backpacks, women’s hygiene products, hair products for all ethnicities, and toiletries for men and women.
 
-4. **Community Action Family Shelter**
-   - Description: Social services organization.
-   - Phone Number: +15036403263.
-   - Location: 45.53389011546534 latitude, -122.97003263306073 longitude.
-   - Address: No. 47 James Bond Street, Vinchruch Cross, Zurich, Switzerland.
-   - Website: [Google Map](https://www.google.com).
-   - ![Image](https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg)
+Community Action Family Shelter: This shelter is run by a social services organization and is located at 210 SE 12th Ave, Hillsboro, OR 97123. They primarily serve families, men, women, and youth in need. Learn more about their services at https://caowash.org/. Their list of donation items needed includes Bibles (NLT), new undergarments, jeans, twin blankets, travel-size toiletries, disposable razors, deodorant, bottled water, coffee, fruit, vegetables, socks, coats, hats, gloves, backpacks, women’s hygiene products, hair products for all ethnicities, and toiletries for men and women.
 
-5. **Transitional Youth**
-   - Description: Youth organization.
-   - Phone Number: +15033507215.
-   - Location: 45.54062352219676 latitude, -122.85055631685724 longitude.
-   - Address: No. 47 James Bond Street, Vinchruch Cross, Zurich, Switzerland.
-   - Website: [Google Map](https://www.google.com).
-   - ![Image](https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg)
+Transitional Youth: Transitional Youth is a youth organization located at 1500 NW 167th Pl, Beaverton, OR 97006. They primarily support youth experiencing homelessness. For further information, please visit https://transitionalyouth.org/. They also have a need for items such as Bibles (NLT), new undergarments, jeans, twin blankets, travel-size toiletries, disposable razors, deodorant, bottled water, coffee, fruit, vegetables, socks, coats, hats, gloves, backpacks, women’s hygiene products, hair products for all ethnicities, and toiletries for men and women.
 
-6. **Rose Haven Day Shelter and Community Center**
-   - Description: Community center.
-   - Phone Number: +15032486364.
-   - Location: 45.533409126988616 latitude, -122.68850797993757 longitude.
-   - Address: No. 47 James Bond Street, Vinchruch Cross, Zurich, Switzerland.
-   - Website: [Google Map](https://www.google.com).
-   - ![Image](https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg)
+Rose Haven Day Shelter and Community Center: Rose Haven Day Shelter and Community Center is a community center located at 1740 NW Glisan St, Portland, OR 97209. They primarily serve women. More details about their services can be found on their website http://www.rosehaven.org/. They are in need of various items including Bibles (NLT), new undergarments, jeans, twin blankets, travel-size toiletries, disposable razors, deodorant, bottled water, coffee, fruit, vegetables, socks, coats, hats, gloves, backpacks, women’s hygiene products, hair products for all ethnicities, and toiletries for men and women.
 
-7. **Washington County Resource Center**
-   - Description: Social services organization.
-   - Phone Number: +15036490367.
-   - Location: 45.51320389624091 latitude, -122.8471230893801 longitude.
-   - Address: No. 47 James Bond Street, Vinchruch Cross, Zurich, Switzerland.
-   - Website: [Google Map](https://www.google.com).
-   - ![Image](https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/530000/530888/image/6180cb963c774.jpeg)
+Share House Men's Shelter: Share House Men's Shelter is a social services organization located at 1115 W 13th St, Vancouver, WA 98660. They primarily serve men and youth. For more details about their services, please visit http://www.sharevancouver.org/. They also have a need for items such as Bibles (NLT), new undergarments, jeans, twin blankets, travel-size toiletries, disposable razors, deodorant, bottled water, coffee, fruit, vegetables, socks, coats, hats, gloves, backpacks, women’s hygiene products, hair products for all ethnicities, and toiletries for men and women.
 
-**Mental Health Services:**
+Burnside Shelter (Portland Rescue Mission): The Burnside Shelter is operated by the Portland Rescue Mission and is located at 111 W Burnside St, Portland, OR 97209. They primarily serve men and youth. You can find more information on their website at https://portlandrescuemission.org/. They are in need of various items including Bibles (NLT), new undergarments, jeans, twin blankets, travel-size toiletries, disposable razors, deodorant, bottled water, coffee, fruit, vegetables, socks, coats, hats, gloves, backpacks, women’s hygiene products, hair products for all ethnicities, and toiletries for men and women.
 
-1. **Suicide Prevention Hotline**
-   - Phone: 1-800-273-8255
-   - Text Line: Text '273TALK' to 839863
-   - Español Phone: 1-888-628-9454 (Español)
+River District Navigation Center: The River District Navigation Center is a homeless shelter located at 1111 NW Naito Pkwy, Portland, OR 97209. They serve men, women, youth, and veterans. You can find more information on their website at https://www.tprojects.org/. They have a need for items including Bibles (NLT), new undergarments, jeans, twin blankets, travel-size toiletries, disposable razors, deodorant, bottled water, coffee, fruit, vegetables, socks, coats, hats, gloves, backpacks, women’s hygiene products, hair products for all ethnicities, and toiletries for men and women.
 
-2. **Avel Gordly Center for Healing (OHSU)**
-   - Phone: 503-418-5311
-   - Additional Info: Counseling, medication management. Only African-American specific services accepts OHP.
+Kenton Women's Village (Argyle Village): Kenton Women's Village is a homeless shelter located at 2250-2344 N Columbia Blvd, Portland, OR 97217, primarily serving women. They are in need of various items including Bibles (NLT), new undergarments, jeans, twin blankets, travel-size toiletries, disposable razors, deodorant, bottled water, coffee, fruit, vegetables, socks, coats, hats, gloves, backpacks, women’s hygiene products, hair products for all ethnicities, and toiletries for men and women. For additional information, visit [https://www.catholiccharitiesoregon.org/
 
-3. **Cascadia Behavioral Health (Intake Line)**
-   - Phone: 503-674-7777
 
-4. **David Romprey Oregon Warmline**
-   - Phone: 1-800-698-2392
-   - Additional Info: Peer support, 9am-11pm.
+Below are data for Mental Health Services,
 
-5. **Folk Time Social Program - NE PDX**
-   - Website: folktime.org
-   - Address: 4837 NE Couch
-   - Additional Info: Drop-in center.
+Suicide Prevention Hotline: If you or someone you know is in crisis, you can call the Suicide Prevention Hotline at 1-800-273-8255. You can also text '273TALK' to 839863. For Spanish speakers, there's a dedicated line at 1-888-628-9454 (Español).
 
-6. **Lewis & Clark Counseling Center**
-   - Phone: 503-768-6320
-   - Additional Info: Student-provided sliding-scale counseling, including couples & substance abuse.
+Avel Gordly Center for Healing (OHSU): They provide counseling and medication management services. Note that they accept OHP and offer African-American specific services. You can reach them at 503-418-5311.
 
-7. **Lifeworks NW**
-   - Phone: 503-645-9010
-   - Additional Info: Mental health/A&D services for youth & adults.
+Cascadia Behavioral Health (Intake Line): For general intake and information about their services, you can call 503-674-7777.
 
-8. **North Star Clubhouse**
-   - Phone: 971-271-7273
-   - Address: 5600 NE Glisan
-   - Additional Info: Support center M-F 9am-5pm.
+David Romprey Oregon Warmline: This service offers peer support and operates from 9 am to 11 pm. You can contact them at 1-800-698-2392.
 
-9. **Oregon Military Assistance Helpline**
-   - Phone: 800-511-6944
-   - Additional Info: Free, anonymous help for military/veterans and families. (24hr).
+Folk Time Social Program - NE PDX: They offer a drop-in center. You can find more details on their website folktime.org or visit them at 4837 NE Couch.
 
-10. **Pacific Psychology Clinic (Portland)**
-    - Phone: 503-352-2400
+Lewis & Clark Counseling Center: They provide sliding-scale counseling, including couples and substance abuse counseling. For appointments, call 503-768-6320.
 
-11. **Pacific Psychology Clinic (Hillsboro)**
-    - Phone: 503-352-7333
+Lifeworks NW: Lifeworks NW offers mental health and addiction services for youth and adults. Contact them at 503-645-9010.
 
-12. **Quest Center for Integrative Health**
-    - Phone: 503-238-5203
-    - Additional Info: Holistic mental health, A&D services. OHP, Medicare.
+North Star Clubhouse: This support center is open from Monday to Friday, 9 am to 5 pm. You can reach them at 971-271-7273 or visit them at 5600 NE Glisan.
 
-13. **Unity Center**
-    - Phone: 503-944-8000
-    - Address: 1225 NE 2nd Ave
-    - Additional Info: Crisis inpatient/stabilization. Triage area for walk-ins.
+Oregon Military Assistance Helpline: This helpline provides free and anonymous help for military personnel, veterans, and their families. It's available 24/7 at 800-511-6944.
 
-14. **Urgent Walk-In Clinic (Cascadia)**
-    - Phone: 503-963-2575
-    - Address: 4212 SE Division
-    - Additional Info: 7am-10:30pm daily. Crisis counseling, prescribing, referrals. Serves all.
+Pacific Psychology Clinic (Portland): For psychological services, you can contact the Pacific Psychology Clinic in Portland at 503-352-2400.
 
-15. **Western Psychological & Counseling**
-    - Phone: 503-253-4600
-    - Additional Info: Counseling, med. management, groups, A&D. Accepts OHP/Medicare.
+Pacific Psychology Clinic (Hillsboro): If you're in Hillsboro, you can reach the Pacific Psychology Clinic at 503-352-7333.
 
-16. **William Temple House**
-    - Phone: 503-
+Quest Center for Integrative Health: They offer holistic mental health and addiction services and accept OHP and Medicare. Contact them at 503-238-5203.
 
-226-3021 x220
-    - Additional Info: Individual, couples, family counseling. Sliding scale. Get application at williamtemple.org.
+Unity Center: Unity Center provides crisis inpatient and stabilization services. It also serves as a triage area for walk-ins. You can contact them at 503-944-8000 or visit them at 1225 NE 2nd Ave.
 
-17. **Cascade AIDS Project (CAP)**
-    - Phone: 503-223-5907
-    - Additional Info: HIV & STD testing.
+Urgent Walk-In Clinic (Cascadia): This clinic offers crisis counseling, prescribing, referrals, and serves everyone. It's open daily from 7 am to 10:30 pm and is located at 4212 SE Division. Contact them at 503-963-2575.
 
-**Legal Services:**
+Western Psychological & Counseling: They offer counseling, medication management, groups, and addiction services. Western Psychological & Counseling accepts OHP and Medicare. You can call them at 503-253-4600.
 
-1. **Immigration Legal Services**
-   - Phone: 503-542-2855
-   - Address: 2740 SE Powell, suite 2
-   - Additional Info: Servicios en Español.
+William Temple House: William Temple House provides individual, couples, and family counseling on a sliding scale. To get an application, visit their website williamtemple.org or call 503-226-3021 x220.
 
-2. **Child Support Helpline**
-   - Phone: 800-850-0228
-   - Website: [oregonchildsupport.gov](https://www.oregonchildsupport.gov).
+Cascade AIDS Project (CAP): CAP offers HIV and STD testing services. Contact them at 503-223-5907.
 
-3. **Immigration Counseling Services**
-   - Phone: 503-221-1689
-   - Additional Info: Low-cost immigration legal assistance.
+Below are data for Legal Services, 
 
-4. **Legal Aid Services of Oregon**
-   - Phone: 503-224-4086
-   - Additional Info: Legal services for low-income.
+Immigration Legal Services: If you need immigration legal services, you can contact them at 503-542-2855. They are located at 2740 SE Powell, Suite 2. Servicios en Español are available.
 
-5. **Lutheran Community Services NW**
-   - Phone: 503-231-7480
-   - Additional Info: Immigrant/Refugee assistance, including crime victims.
+Child Support Helpline: For child support-related inquiries, you can call the Child Support Helpline at 800-850-0228. You can also visit their website at oregonchildsupport.gov.
+
+Immigration Counseling Services: They offer low-cost immigration legal assistance. You can reach them at 503-221-1689.
+
+Legal Aid Services of Oregon: Legal Aid Services of Oregon provides legal services for low-income individuals. If you require their assistance, you can call 503-224-4086.
+
+Lutheran Community Services NW: They offer immigrant and refugee assistance, including services for crime victims. For support, contact them at 503-231-7480.
 `;
