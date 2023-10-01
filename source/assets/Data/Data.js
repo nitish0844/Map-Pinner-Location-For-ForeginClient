@@ -536,7 +536,6 @@ River District Navigation Center: The River District Navigation Center is a home
 
 Kenton Women's Village (Argyle Village): Kenton Women's Village is a homeless shelter located at 2250-2344 N Columbia Blvd, Portland, OR 97217, primarily serving women. They are in need of various items including Bibles (NLT), new undergarments, jeans, twin blankets, travel-size toiletries, disposable razors, deodorant, bottled water, coffee, fruit, vegetables, socks, coats, hats, gloves, backpacks, women’s hygiene products, hair products for all ethnicities, and toiletries for men and women. For additional information, visit [https://www.catholiccharitiesoregon.org/
 
-
 Below are data for Mental Health Services,
 
 Suicide Prevention Hotline: If you or someone you know is in crisis, you can call the Suicide Prevention Hotline at 1-800-273-8255. You can also text '273TALK' to 839863. For Spanish speakers, there's a dedicated line at 1-888-628-9454 (Español).
