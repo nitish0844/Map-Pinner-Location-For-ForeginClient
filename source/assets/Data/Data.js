@@ -9,6 +9,7 @@ export const ShelterData = [
     longitude: -122.83305785767608,
     address: '14986 NW Cornell Rd, Portland, OR 97229',
     website: 'https://www.familypromisegwc.org/',
+    Category: 'Family , Men, Women, Youth',
     Donationitemsinneed: [
       '📖 Bibles (NLT)',
       '👕 New Undergarments',
@@ -35,6 +36,7 @@ export const ShelterData = [
     name: 'Community of Hope',
     number: '+19712694093',
     description: 'Non-profit organization',
+    Category: 'Family , Men, Women, Youth',
     latitude: 45.5959701574567,
     longitude: -122.75267510500011,
     address: '8911 N Leonard St, Portland, OR 97203',
@@ -69,6 +71,7 @@ export const ShelterData = [
     longitude: -122.7533968256706,
     address: '5625 SW Erickson Ave, Beaverton, OR 97007',
     website: 'https://www.familypromisegwc.org/',
+    Category: 'Family , Men, Women, Youth',
     Donationitemsinneed: [
       '📖 Bibles (NLT)',
       '👕 New Undergarments',
@@ -100,6 +103,8 @@ export const ShelterData = [
     longitude: -122.97003263306073,
     address: '210 SE 12th Ave, Hillsboro, OR 97123',
     website: 'https://caowash.org/',
+    Category: 'Family , Men, Women, Youth',
+    Category: 'Youth',
     Donationitemsinneed: [
       '📖 Bibles (NLT)',
       '👕 New Undergarments',
@@ -130,6 +135,7 @@ export const ShelterData = [
     latitude: 45.54062352219676,
     longitude: -122.85055631685724,
     address: '1500 NW 167th Pl, Beaverton, OR 97006',
+    Category: 'Youth',
     website: 'https://transitionalyouth.org/',
     Donationitemsinneed: [
       '📖 Bibles (NLT)',
@@ -162,6 +168,7 @@ export const ShelterData = [
     longitude: -122.68850797993757,
     address: '1740 NW Glisan St, Portland, OR 97209',
     website: 'http://www.rosehaven.org/',
+    Category: 'Women',
     Donationitemsinneed: [
       '📖 Bibles (NLT)',
       '👕 New Undergarments',
@@ -193,6 +200,7 @@ export const ShelterData = [
     longitude: -122.6849136164892,
     address: '1115 W 13th St, Vancouver, WA 98660',
     website: 'http://www.sharevancouver.org/',
+    Category: 'Men,  Youth',
     Donationitemsinneed: [
       '📖 Bibles (NLT)',
       '👕 New Undergarments',
@@ -224,6 +232,7 @@ export const ShelterData = [
     longitude: -122.67083222010152,
     address: '111 W Burnside St, Portland, OR 97209',
     website: 'https://portlandrescuemission.org/',
+    Category: 'Men,  Youth',
     Donationitemsinneed: [
       '📖 Bibles (NLT)',
       '👕 New Undergarments',
@@ -255,6 +264,7 @@ export const ShelterData = [
     longitude: -122.67254883378197,
     address: '1111 NW Naito Pkwy, Portland, OR 97209',
     website: 'https://www.tprojects.org/',
+    Category: 'Men, Women, Youth, veterans',
     Donationitemsinneed: [
       '📖 Bibles (NLT)',
       '👕 New Undergarments',
@@ -285,6 +295,7 @@ export const ShelterData = [
     latitude: 45.59034768423318,
     longitude: -122.69280487521146,
     address: '2250-2344 N Columbia Blvd, Portland, OR 97217',
+    Category: 'Women',
     Donationitemsinneed: [
       '📖 Bibles (NLT)',
       '👕 New Undergarments',
@@ -316,6 +327,7 @@ export const ShelterData = [
     longitude: -122.77961153064516,
     address: '11130 SW Greenburg Rd, Tigard, OR 97223',
     website: 'http://gncnw.org/',
+    Category: 'Family , Men, Women, children',
     Donationitemsinneed: [
       '📖 Bibles (NLT)',
       '👕 New Undergarments',
@@ -346,6 +358,7 @@ export const ShelterData = [
     longitude: -122.98461109885345,
     address: '454 SE Washington St, Hillsboro, OR 97123',
     website: 'https://www.boysandgirlsaid.org/shelterandhousing',
+    Category: 'Youth',
     Donationitemsinneed: [
       '📖 Bibles (NLT)',
       '👕 New Undergarments',

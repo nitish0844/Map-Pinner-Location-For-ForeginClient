@@ -1,7 +1,6 @@
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
 import Octicons from 'react-native-vector-icons/Octicons';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons.js';
 import {useNavigation} from '@react-navigation/native';
 
 const HeaderMapDetail = () => {
